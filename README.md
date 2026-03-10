@@ -9,14 +9,14 @@ InsightGen is a GenAI-powered dashboard generator that converts natural language
 \## Features
 
 \- Natural language to SQL using Gemini
+- File upload (CSV/Excel) with dynamic dataset handling
+- Automatic schema detection from uploaded or default data
+- Enhanced charting with Plotly and smart chart selection
+- Conversation memory for follow-up questions
+- SQL explanations and AI-generated business insights
+- Strong SQL validation (SELECT-only, blocking DML/DDL)
+- Streamlit-based UI with sidebar and caching
 
-\- Safe SELECT-only SQL execution
-
-\- Automatic chart generation
-
-\- Business insights using GenAI
-
-\- Streamlit-based UI
 
 
 
@@ -51,6 +51,8 @@ InsightGen is a GenAI-powered dashboard generator that converts natural language
 5\. Run the app:
 
 &nbsp;  streamlit run app.py
+
+6\. (Optional) Upload your own dataset via the sidebar. Supported formats are CSV and Excel. If you upload a file it will replace the default sales data and be used for subsequent queries.
 
 
 
