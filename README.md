@@ -4,51 +4,33 @@ InsightGen is a natural language analytics dashboard that enables users to explo
 
 The goal of InsightGen is to simplify data exploration by allowing users to interact with their data without needing to manually write SQL queries.
 
-✨ Features
-
+**✨ Features**
 🧠 Natural language interface for querying datasets
-
 🔍 Automatic SQL query generation using a large language model
-
 🛡️ Secure SQL execution with strict query validation
-
 📂 Support for uploading custom datasets (CSV and Excel)
-
 📊 Automatic schema detection from uploaded data
-
 📈 Interactive visualizations using Plotly
-
 🎯 Smart chart selection based on dataset structure
-
 📝 SQL query explanations for better transparency
-
 💡 AI-generated analytical insights from query results
-
 🔄 Conversation memory for follow-up queries
-
 🖥️ Streamlit-based responsive dashboard interface
 
-🧰 Technology Stack
-Backend
-
+**🧰 Technology Stack**
+**Backend**
 🐍 Python
-
 🗄️ SQLite
-
 📑 Pandas
 
-Frontend
-
+**Frontend**
 🎛️ Streamlit
-
 📊 Plotly
 
-AI Integration
-
+**AI Integration**
 🤖 Google Gemini API
 
-⚙️ How It Works
-
+**⚙️ How It Works**
 1️⃣ The user enters a business question in natural language.
 2️⃣ The system analyzes the dataset schema.
 3️⃣ The query and schema are sent to the language model.
@@ -58,9 +40,8 @@ AI Integration
 7️⃣ Results are processed and visualized through interactive charts.
 8️⃣ Additional insights and explanations are generated to help interpret the data.
 
-🏗️ System Architecture
+**🏗️ System Architecture**
 <img width="6128" height="327" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/46a93820-8875-4527-88b2-e89089fa6160" />
-
 
 The system follows a modular pipeline where natural language queries are transformed into SQL queries, executed on a dataset, and returned with visualizations and insights.
 
@@ -80,32 +61,21 @@ streamlit run app.py
 📂 Dataset Support
 
 InsightGen supports both default datasets and user-uploaded datasets.
-
 Users can upload datasets directly from the sidebar.
 
-Supported formats:
-
+**Supported formats:**
 CSV
-
 Excel (.xlsx)
-
 After uploading, the application automatically detects the dataset schema and uses it for query generation and visualization.
 
-💬 Example Queries
+💬 Example Queries:
+-> Category wise total sales
+-> Top 5 products by revenue
+-> Monthly sales trend
+-> Average order value by category
+-> Revenue distribution across products
 
-Examples of questions you can ask:
-
-Category wise total sales
-
-Top 5 products by revenue
-
-Monthly sales trend
-
-Average order value by category
-
-Revenue distribution across products
-
-📁 Project Structure
+**📁 Project Structure**
 InsightGen
 │
 ├── app.py
@@ -120,33 +90,13 @@ InsightGen
 To ensure safe database interaction, the system includes strict SQL validation rules.
 
 The application blocks queries containing operations such as:
-
 INSERT
-
 UPDATE
-
 DELETE
-
 DROP
-
 ALTER
-
 TRUNCATE
 
-Only read-only SELECT queries are executed.
-
-🔮 Future Improvements
-
-Potential improvements include:
-
-Support for additional database systems
-
-Advanced dashboard customization
-
-Exportable reports and visualizations
-
-Improved chart recommendation logic
-
-Multi-user authentication and access control
+**Only read-only SELECT queries are executed.**
 
 ⭐ If you found this project interesting, consider giving the repository a star.
