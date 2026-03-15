@@ -92,21 +92,25 @@ GEMINI_API_KEY=your_api_key_here
 
 streamlit run app.py
 
-📂 Dataset Support
+**📂 Dataset Support**
 
 InsightGen supports both default datasets and user-uploaded datasets.
 Users can upload datasets directly from the sidebar.
 
 **Supported formats:**
-CSV
-Excel (.xlsx)
+CSV, Excel (.xlsx).
 After uploading, the application automatically detects the dataset schema and uses it for query generation and visualization.
 
 💬 Example Queries:
+
 -> Category wise total sales
+
 -> Top 5 products by revenue
+
 -> Monthly sales trend
+
 -> Average order value by category
+
 -> Revenue distribution across products
 
 **📁 Project Structure**
@@ -124,11 +128,11 @@ InsightGen
 To ensure safe database interaction, the system includes strict SQL validation rules.
 
 The application blocks queries containing operations such as:
-INSERT
-UPDATE
-DELETE
-DROP
-ALTER
+INSERT,
+UPDATE, 
+DELETE, 
+DROP, 
+ALTER, 
 TRUNCATE
 
 **Only read-only SELECT queries are executed.**
