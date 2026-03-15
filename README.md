@@ -114,15 +114,25 @@ After uploading, the application automatically detects the dataset schema and us
 -> Revenue distribution across products
 
 **📁 Project Structure**
+
 InsightGen
+
 │
+
 ├── app.py
+
 ├── chart_utils.py
+
 ├── schema_utils.py
+
 ├── memory_utils.py
+
 ├── sql_validator.py
+
 ├── requirements.txt
+
 ├── README.md
+
 🔒 Security Considerations
 
 To ensure safe database interaction, the system includes strict SQL validation rules.
