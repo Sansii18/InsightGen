@@ -5,29 +5,47 @@ InsightGen is a natural language analytics dashboard that enables users to explo
 The goal of InsightGen is to simplify data exploration by allowing users to interact with their data without needing to manually write SQL queries.
 
 **✨ Features**
+
 🧠 Natural language interface for querying datasets
+
 🔍 Automatic SQL query generation using a large language model
+
 🛡️ Secure SQL execution with strict query validation
+
 📂 Support for uploading custom datasets (CSV and Excel)
+
 📊 Automatic schema detection from uploaded data
+
 📈 Interactive visualizations using Plotly
+
 🎯 Smart chart selection based on dataset structure
+
 📝 SQL query explanations for better transparency
+
 💡 AI-generated analytical insights from query results
+
 🔄 Conversation memory for follow-up queries
+
 🖥️ Streamlit-based responsive dashboard interface
 
 **🧰 Technology Stack**
+
 **Backend**
+
 🐍 Python
+
 🗄️ SQLite
+
 📑 Pandas
 
 **Frontend**
+
 🎛️ Streamlit
+
 📊 Plotly
 
 **AI Integration**
+
 🤖 Google Gemini API
 
 **⚙️ How It Works**
