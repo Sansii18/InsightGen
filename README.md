@@ -28,6 +28,7 @@ The goal of InsightGen is to simplify data exploration by allowing users to inte
 
 🖥️ Streamlit-based responsive dashboard interface
 
+
 **🧰 Technology Stack**
 
 **Backend**
@@ -48,14 +49,23 @@ The goal of InsightGen is to simplify data exploration by allowing users to inte
 
 🤖 Google Gemini API
 
+
 **⚙️ How It Works**
+
 1️⃣ The user enters a business question in natural language.
+
 2️⃣ The system analyzes the dataset schema.
+
 3️⃣ The query and schema are sent to the language model.
+
 4️⃣ The model generates a SQL query.
+
 5️⃣ The query is validated to ensure it is safe to execute.
+
 6️⃣ The query is executed against the dataset.
+
 7️⃣ Results are processed and visualized through interactive charts.
+
 8️⃣ Additional insights and explanations are generated to help interpret the data.
 
 **🏗️ System Architecture**
@@ -64,18 +74,24 @@ The goal of InsightGen is to simplify data exploration by allowing users to inte
 The system follows a modular pipeline where natural language queries are transformed into SQL queries, executed on a dataset, and returned with visualizations and insights.
 
 🛠️ Setup Instructions
-1️⃣ Clone the repository
+
+1️⃣ Clone the repository 
+
 git clone https://github.com/<your-username>/InsightGen.git
 cd InsightGen
-2️⃣ Create environment file
 
-Create a .env file in the root directory.
+2️⃣ Create environment file
+(Create a .env file in the root directory)
 
 GEMINI_API_KEY=your_api_key_here
+
 3️⃣ Install dependencies
-pip install -r requirements.txt
+(pip install -r requirements.txt)
+
 4️⃣ Run the application
+
 streamlit run app.py
+
 📂 Dataset Support
 
 InsightGen supports both default datasets and user-uploaded datasets.
