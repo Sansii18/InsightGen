@@ -27,7 +27,7 @@ InsightGen is an intelligent analytics dashboard that empowers users to explore 
 ## 📸 Screenshots & Demo
 
 ### Dashboard Overview - Main Interface
-![InsightGen Dashboard](InsightGen\screenshots\Dashboard.png)
+![InsightGen Dashboard](InsightGen/screenshots\Dashboard.png)
 *Main dashboard interface with natural language query input area, sample data loaded, and navigation sidebar*
 
 ### Query Results with Visualizations
