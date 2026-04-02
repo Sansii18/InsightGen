@@ -33,15 +33,15 @@ InsightGen is an intelligent analytics dashboard that empowers users to explore 
 ### Query Results with Visualizations
 ![Query Results](screenshots/B.png)
 
-![Query Results](InsightGen/screenshots/C.png)
+![Query Results](screenshots/C.png)
 
-![Query Results](InsightGen/screenshots/D.png)
+![Query Results](screenshots/D.png)
 
-![Query Results](InsightGen/screenshots/E.png)
+![Query Results](screenshots/E.png)
 *Automatic chart generation showing query results with interactive Plotly visualizations*
 
 ### Data Upload Feature
-![Data Upload](InsightGen/screenshots/F.png)
+![Data Upload](screenshots/F.png)
 *Easy dataset upload interface supporting CSV and Excel files with auto-schema detection*
 
 ---
