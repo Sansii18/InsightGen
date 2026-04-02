@@ -458,7 +458,8 @@ if 'data_version' not in st.session_state:
 # =====================================================================
 
 def get_connection():
-    return sqlite3.connect("sales.db")
+    db_path = os.path.join(os.path.dirname(__file__), "sales.db")
+    return sqlite3.connect(db_path)
 
 @st.cache_data
 def load_default_data() -> pd.DataFrame:
