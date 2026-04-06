@@ -440,7 +440,7 @@ if not API_KEY:
     st.error("🔑 API key not found. Please add GOOGLE_API_KEY to Streamlit secrets or set GEMINI_API_KEY in .env file")
     st.stop()
 
-client = genai.Client(api_key=API_KEY)
+genai.configure(api_key=API_KEY)
 
 st.set_page_config(
     page_title="InsightGen – AI Analytics",
@@ -503,10 +503,8 @@ Rules:
     prompt += f"\nUser question:\n{user_question}\n\nSQL:\n"
 
     try:
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt
-        )
+        model = genai.GenerativeModel("gemini-2.5-flash")
+        response = model.generate_content(prompt)
         return clean_sql(response.text)
     except Exception as e:
         return f"-- ERROR: {str(e)}"
@@ -521,10 +519,8 @@ SQL:
 {sql}
 """
     try:
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt
-        )
+        model = genai.GenerativeModel("gemini-2.5-flash")
+        response = model.generate_content(prompt)
         return response.text.strip()
     except Exception as e:
         return f"Unable to generate explanation: {e}"
@@ -541,10 +537,8 @@ Given this data:
 Give 3 short business insights in bullet points.
 """
     try:
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt
-        )
+        model = genai.GenerativeModel("gemini-2.5-flash")
+        response = model.generate_content(prompt)
         return response.text.strip()
     except Exception as e:
         return f"- Unable to generate insights: {e}"
