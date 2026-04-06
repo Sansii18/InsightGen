@@ -3,7 +3,7 @@ import sqlite3
 import pandas as pd
 import os
 from dotenv import load_dotenv
-from google import genai
+import google.generativeai as genai
 
 from schema_utils import generate_schema_string
 from chart_utils import generate_chart
