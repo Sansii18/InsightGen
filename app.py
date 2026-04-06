@@ -466,11 +466,68 @@ def get_connection():
     db_path = os.path.join(os.path.dirname(__file__), "sales.db")
     return sqlite3.connect(db_path)
 
+def init_database():
+    """Initialize database with sample data if it doesn't exist."""
+    import random
+    from datetime import datetime, timedelta
+    
+    try:
+        with get_connection() as conn:
+            cursor = conn.cursor()
+            # Check if table exists
+            cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='sales'")
+            if cursor.fetchone():
+                return  # Table already exists
+            
+            # Create table
+            cursor.execute("""
+            CREATE TABLE IF NOT EXISTS sales (
+                order_id INTEGER PRIMARY KEY,
+                product_name TEXT,
+                category TEXT,
+                quantity INTEGER,
+                price REAL,
+                order_date TEXT
+            )
+            """)
+            
+            # Insert sample data
+            products = [
+                ("Laptop", "Electronics"),
+                ("Phone", "Electronics"),
+                ("Shoes", "Fashion"),
+                ("Watch", "Accessories"),
+                ("Bag", "Fashion")
+            ]
+            
+            start_date = datetime.now() - timedelta(days=90)
+            
+            for _ in range(200):
+                product, category = random.choice(products)
+                quantity = random.randint(1, 5)
+                price = random.randint(1000, 60000)
+                date = start_date + timedelta(days=random.randint(0, 90))
+                
+                cursor.execute("""
+                INSERT INTO sales (product_name, category, quantity, price, order_date)
+                VALUES (?, ?, ?, ?, ?)
+                """, (product, category, quantity, price, date.strftime("%Y-%m-%d")))
+            
+            conn.commit()
+    except Exception as e:
+        st.error(f"Error initializing database: {e}")
+
 @st.cache_data
 def load_default_data() -> pd.DataFrame:
     """Load the built-in sales table."""
+    init_database()
     with get_connection() as conn:
-        return pd.read_sql("SELECT * FROM sales", conn)
+        try:
+            return pd.read_sql("SELECT * FROM sales", conn)
+        except Exception as e:
+            st.error(f"Error loading data: {e}")
+            # Return empty dataframe as fallback
+            return pd.DataFrame()
 
 @st.cache_data
 def run_query(sql: str, version: int) -> pd.DataFrame:
