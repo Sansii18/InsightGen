@@ -430,9 +430,14 @@ DASHBOARD_CSS = """
 
 load_dotenv()
 
-API_KEY = os.getenv("GEMINI_API_KEY")
+# Load API key from Streamlit secrets or environment
+try:
+    API_KEY = st.secrets["GOOGLE_API_KEY"]
+except (KeyError, FileNotFoundError):
+    API_KEY = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+
 if not API_KEY:
-    st.error("🔑 GEMINI_API_KEY not found in .env file")
+    st.error("🔑 API key not found. Please add GOOGLE_API_KEY to Streamlit secrets or set GEMINI_API_KEY in .env file")
     st.stop()
 
 client = genai.Client(api_key=API_KEY)
